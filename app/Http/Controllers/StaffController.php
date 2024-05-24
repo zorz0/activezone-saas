@@ -25,7 +25,7 @@ class StaffController extends Controller
      */
     public function index()
     {
-        $staffs = Staff::paginate(10);
+        $staffs = Staff::where('id', '!=', 1)->paginate(10);
         return view('backend.staff.staffs.index', compact('staffs'));
     }
 
